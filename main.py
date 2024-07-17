@@ -7,7 +7,18 @@ from selenium.webdriver.support import expected_conditions as EC
 import pandas as pd
 import numpy as np
 
+
+import datetime
 import os
+
+
+
+
+#by changing the number you can choose if you want to rent or buy
+buy_or_rent = 1 # 1 = buy, 2 = rent
+type_of_property = 2 # 1 = apartments, 2 = houses
+location = "Krompachy"
+
 
 
 
@@ -21,11 +32,6 @@ def convert_to_num(num):
 
 driver = webdriver.Chrome()
 wait = WebDriverWait(driver, 10)
-
-#by changing the number you can choose if you want to rent or buy
-buy_or_rent = 1 # 1 = buy, 2 = rent
-type_of_property = 1 # 1 = apartments, 2 = houses
-location = "Zilina"
 
 
 data = {"price": [], "price_per_sq_m": [], "sq_meter": [], "location": [], "type_of_property": []}
@@ -73,15 +79,19 @@ wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "button.css-1nte1ih"))).
 #waits for the page to load
 wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "div.advertisement-item--content__price")))
 
-num_pages = driver.find_element(By.XPATH, "(//li[contains(@class, 'component-pagination__item')])[5]")
+
+#gets the number of pages
+try:
+    num_pages = range(2, int(driver.find_element(By.XPATH, "(//li[contains(@class, 'component-pagination__item')])[5]").text))
+except:
+    num_pages = range(1)
 
 
 #getting the url so i can switch to next page
 url = driver.current_url
-print(url)
 
 
-for page in range(2, int(num_pages.text)):
+for page in num_pages:
     #getting the data
     prices = driver.find_elements(By.CSS_SELECTOR, "div.advertisement-item--content__price")
     main_info = driver.find_elements(By.CSS_SELECTOR, "div.advertisement-item--content__info")
@@ -156,17 +166,17 @@ driver.quit()
 
 
 # creates a csv if it doesnt exist and puts it in the data folder
-directory = 'data/'
-file_name = url[29:-1].replace('/', '-')+'.csv'
+cur_date = datetime.datetime.now()
+file_name = url[29:-1].replace('/', '-')
+directory = 'data/'+file_name+"/"
 
-file_path = os.path.join(directory, file_name)
 
 os.makedirs(directory, exist_ok=True)
 
-open(file_path, 'a').close()
+
 
 
 
 #creates the dataframe and puts it in the csv
 df = pd.DataFrame(data)
-df.to_csv((directory+file_name), index=False)
+df.to_csv((directory+file_name+"_"+str(cur_date.date())+".csv"), index=False)
