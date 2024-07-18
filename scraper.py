@@ -21,9 +21,6 @@ def convert_to_num(num):
 
 def get_data(buy_or_rent, type_of_property, location):
 
-
-
-
     driver = webdriver.Chrome()
     wait = WebDriverWait(driver, 10)
 
@@ -104,22 +101,21 @@ def get_data(buy_or_rent, type_of_property, location):
 
             #checks if the property has a set price
             if index == -1 or no_price_per_meter == True:
-
                 data["price"].append(np.nan)
                 data["price_per_sq_m"].append(np.nan)
                 no_price_per_meter = False
-            else:
 
+            else:
                 data["price"].append(float(convert_to_num(text[:index-2])))
 
 
                 #checks if its a house or a apartment
                 if buy_or_rent == 1:
-
                     data["price_per_sq_m"].append(float(convert_to_num(text[index+2:-4])))
-                else:
 
+                else:
                     data["price_per_sq_m"].append(float(convert_to_num(text[index:-9])))
+
         #scrapes and append rest of the data
         count = 0
         for info in main_info:
@@ -127,23 +123,21 @@ def get_data(buy_or_rent, type_of_property, location):
             count += 1
 
             if count == 1:
-
                 adress = info.text
                 data["location"].append(adress)
 
 
             if count == 2:
-
                 sq_meter_index = info.text.find("•")
                 property_type = info.text[:sq_meter_index-1]
                 count = 0
 
                 if sq_meter_index == -1:
-
                     sq_meters = np.nan
-                else:
 
+                else:
                     sq_meters = float(convert_to_num(info.text[sq_meter_index+2:-3]))
+                    
 
                 data["sq_meter"].append(sq_meters)
                 data["type_of_property"].append(property_type)
@@ -166,7 +160,6 @@ def get_data(buy_or_rent, type_of_property, location):
 
 
     os.makedirs(directory, exist_ok=True)
-
 
 
 

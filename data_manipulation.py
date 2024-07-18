@@ -35,30 +35,38 @@ def get_newer_data(folder_name):
 
     get_data(buy_or_rent, type_of_property, location)
 
-get_newer_data("byty-zilina-predaj")
+#get_newer_data("byty-zilina-predaj")
 
 
 def get_avg(folder_name):
     averages = pd.DataFrame()
 
-    for i in os.scandir(f"data/{folder_name}"):
+    files = os.scandir(f"data/{folder_name}")
+    dates = []
+
+    for i in files:
         test = pd.read_csv(f"data/{folder_name}/"+i.name).mean(numeric_only=True)
         averages = pd.concat([averages, test.to_frame().T], ignore_index=True)
-    
-    return averages
+
+        dates.append(i.name.split("_")[-1])
+
+    print(dates)
+
+    return averages.set_index(dates)
+
+#get_avg("byty-okres-zilina-predaj")
+
 
 def get_total_avg(folder_name):
     return get_avg(folder_name).mean()
 
-
-
-#print(get_total_avg("byty-zilina-predaj"))
-
+#get_total_avg("byty-okres-zilina-predaj")
 
 
 
 
-#df["price"].hist()
+print(get_avg("byty-okres-zilina-predaj"))
+get_avg("byty-okres-zilina-predaj").plot()
 
 #plt.show()
 
