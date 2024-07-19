@@ -37,7 +37,6 @@ def get_newer_data(folder_name):
 
 #get_newer_data("byty-zilina-predaj")
 
-
 def get_avg(folder_name):
     averages = pd.DataFrame()
 
@@ -48,11 +47,15 @@ def get_avg(folder_name):
         test = pd.read_csv(f"data/{folder_name}/"+i.name).mean(numeric_only=True)
         averages = pd.concat([averages, test.to_frame().T], ignore_index=True)
 
-        dates.append(i.name.split("_")[-1])
 
-    print(dates)
+        if "copy" in i.name:
+            dates.append(pd.to_datetime(i.name.split("_")[1][:-9]))
+        else:
+            dates.append(pd.to_datetime(i.name.split("_")[1][:-4]))
 
-    return averages.set_index(dates)
+    averages.index = dates
+
+    return averages
 
 #get_avg("byty-okres-zilina-predaj")
 
@@ -65,9 +68,8 @@ def get_total_avg(folder_name):
 
 
 
-print(get_avg("byty-okres-zilina-predaj"))
 get_avg("byty-okres-zilina-predaj").plot()
 
-#plt.show()
+plt.show()
 
 
