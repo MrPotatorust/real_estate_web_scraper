@@ -37,39 +37,62 @@ def get_newer_data(folder_name):
 
 #get_newer_data("byty-zilina-predaj")
 
-def get_avg(folder_name):
+
+#extracts and does a desired function on the csv file if you dont specify it it will return all of them
+def extract_data(folder_name, function_type):
     averages = pd.DataFrame()
 
     files = os.scandir(f"data/{folder_name}")
     dates = []
 
     for i in files:
-        test = pd.read_csv(f"data/{folder_name}/"+i.name).mean(numeric_only=True)
-        averages = pd.concat([averages, test.to_frame().T], ignore_index=True)
+        csv_file = pd.read_csv(f"data/{folder_name}/"+i.name)
+
+        if function_type == "avg":
+            calc = csv_file.mean(numeric_only=True)
+        elif function_type == "max":
+            calc = csv_file.max(numeric_only=True)
+        elif function_type == "min":
+            calc = csv_file.min(numeric_only=True)
+        else:
+            calc_min = csv_file.min(numeric_only=True)
+            calc_min.index = ["min_price","min_price_per_sq_m","min_sq_meter"]
+
+            calc_max = csv_file.max(numeric_only=True)
+            calc_max.index = ["max_price","max_price_per_sq_m","max_sq_meter"]
+
+            calc_mean = csv_file.mean(numeric_only=True)
+            calc_mean.index = ["avg_price","avg_price_per_sq_m","avg_sq_meter"]
 
 
+            calc = pd.concat([calc_min, calc_max, calc_mean])
+        
+            
+        averages = pd.concat([averages, calc.to_frame().T], ignore_index=True)
+
+
+        #checks if copy is the name of the file 
         if "copy" in i.name:
             dates.append(pd.to_datetime(i.name.split("_")[1][:-9]))
         else:
             dates.append(pd.to_datetime(i.name.split("_")[1][:-4]))
 
+
     averages.index = dates
 
     return averages
 
-#get_avg("byty-okres-zilina-predaj")
+#extract_data("byty-okres-zilina-predaj", "")
 
 
-def get_total_avg(folder_name):
-    return get_avg(folder_name).mean()
+#def get_total_avg(folder_name):
+#    return get_avg(folder_name).mean()
 
 #get_total_avg("byty-okres-zilina-predaj")
 
 
 
 
-get_avg("byty-okres-zilina-predaj").plot()
+extract_data("byty-okres-zilina-predaj", "").plot()
 
 plt.show()
-
-
