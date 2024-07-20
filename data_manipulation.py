@@ -38,6 +38,7 @@ def get_newer_data(folder_name):
 #get_newer_data("byty-zilina-predaj")
 
 
+
 #extracts and does a desired function on the csv file if you dont specify it it will return all of them
 def extract_data(folder_name, function_type):
     averages = pd.DataFrame()
@@ -83,8 +84,6 @@ def extract_data(folder_name, function_type):
     return averages
 
 #extract_data("byty-okres-zilina-predaj", "")
-
-
 
 
 
