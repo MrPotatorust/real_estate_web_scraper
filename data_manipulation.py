@@ -85,10 +85,21 @@ def extract_data(folder_name, function_type):
 #extract_data("byty-okres-zilina-predaj", "")
 
 
-#def get_total_avg(folder_name):
-#    return get_avg(folder_name).mean()
 
-#get_total_avg("byty-okres-zilina-predaj")
+
+
+#if you want for example max of all averages use exapmple: get_total_max("byty-okres-zilina-predaj", "avg")
+def get_total_avg(folder_name, function_type):
+    return extract_data(folder_name, function_type).mean()
+
+def get_total_max(folder_name, function_type):
+    return extract_data(folder_name, function_type).max()
+
+def get_total_min(folder_name, function_type):
+    return extract_data(folder_name, function_type).min()
+
+
+#get_total_max("byty-okres-zilina-predaj", "avg")
 
 
 
