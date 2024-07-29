@@ -11,8 +11,6 @@ import numpy as np
 import datetime
 import os
 
-import time
-
 
 
 
@@ -109,7 +107,8 @@ def get_data(buy_or_rent, type_of_property, location):
                 no_price_per_meter = False
 
             else:
-                data["price"].append(float(convert_to_num(text[:index-6])))
+                data["price"].append(float(convert_to_num(text[:index-2])))
+
 
 
                 #checks if its a house or a apartment
