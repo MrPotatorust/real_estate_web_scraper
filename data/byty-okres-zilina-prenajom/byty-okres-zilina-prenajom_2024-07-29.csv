@@ -1,0 +1,91 @@
+price,price_per_sq_m,sq_meter,location,type_of_property
+1400.0,10.53,133.0,"Tajovského, Žilina - Bôrik, okres Žilina",4 izbový byt
+750.0,12.5,60.0,"Pražská 9037, Žilina - Vlčince, okres Žilina",2 izbový byt
+,,,"Žilina - Staré mesto, okres Žilina",2 izbový b
+,,,"Jána Milca 807/1, Žilina - Staré mesto, okres Žilina",2 izbový b
+650.0,6.91,94.0,"Žilina - Staré mesto, okres Žilina",3 izbový byt
+750.0,10.71,70.0,"Jaseňová 3217/17, Žilina - Solinky, okres Žilina",3 izbový byt
+650.0,10.83,60.0,"Sad na studničkách 1031/7, Žilina - Staré mesto, okres Žilina",2 izbový byt
+590.0,14.75,40.0,"Makovického, Žilina - Staré mesto, okres Žilina",2 izbový byt
+350.0,14.58,24.0,"1. mája 736/26, Žilina - Staré mesto, okres Žilina",Garsónka
+420.0,8.75,48.0,"Žilina - Staré mesto, okres Žilina",2 izbový byt
+780.0,13.22,59.0,"Pražská, Žilina - Vlčince, okres Žilina",2 izbový byt
+550.0,6.11,90.0,"Mariánske námestie, Žilina - Staré mesto, okres Žilina",2 izbový byt
+485.0,9.9,49.0,"Žilina - Bytčica, okres Žilina",1 izbový byt
+,,,"Žilina, okres Žilina",3 izbový b
+750.0,15.96,47.0,"Žilina, okres Žilina",2 izbový byt
+1100.0,9.82,112.0,"Žilina, okres Žilina",3 izbový byt
+800.0,16.0,50.0,"Žilina, okres Žilina",2 izbový byt
+600.0,10.91,55.0,"Žilina - Hliny, okres Žilina",2 izbový byt
+400.0,8.89,45.0,"Žilina, okres Žilina",1 izbový byt
+850.0,12.14,70.0,"A. Bernoláka, Žilina, okres Žilina",3 izbový byt
+1100.0,11.58,95.0,"Za plavárňou, Žilina - Bôrik, okres Žilina",3 izbový byt
+950.0,15.83,60.0,"Rosina, okres Žilina",2 izbový byt
+890.0,16.18,55.0,"Žilina - Hliny, okres Žilina",2 izbový byt
+620.0,13.19,47.0,"Predmestská, Žilina - Staré mesto, okres Žilina",2 izbový byt
+700.0,12.96,54.0,"Predmestská, Žilina - Staré mesto, okres Žilina",2 izbový byt
+350.0,12.96,27.0,"Žilina, okres Žilina",Garsónka
+650.0,11.21,58.0,"Žilina, okres Žilina",2 izbový byt
+900.0,12.86,70.0,"Mariánske námestie, Žilina, okres Žilina",3 izbový byt
+750.0,9.26,81.0,"Žilina, okres Žilina",3 izbový byt
+715.0,11.0,65.0,"Žilina, okres Žilina",2 izbový byt
+650.0,11.61,56.0,"Kálov, Žilina - Staré mesto, okres Žilina",2 izbový byt
+720.0,14.69,49.0,"Žilina, okres Žilina",2 izbový byt
+700.0,10.94,64.0,"Žilina - Solinky, okres Žilina",3 izbový byt
+480.0,10.0,48.0,"Žilina, okres Žilina",2 izbový byt
+400.0,10.53,38.0,"Žilina, okres Žilina",1 izbový byt
+400.0,9.09,44.0,"Žilina, okres Žilina",1 izbový byt
+500.0,7.45,67.1,"Žilina, okres Žilina",3 izbový byt
+470.0,8.95,52.5,"Žilina, okres Žilina",2 izbový byt
+590.0,8.19,72.0,"Žilina, okres Žilina",3 izbový byt
+590.0,9.52,62.0,"Žilina, okres Žilina",3 izbový byt
+390.0,10.0,39.0,"Žilina, okres Žilina",1 izbový byt
+590.0,7.56,78.0,"Žilina, okres Žilina",3 izbový byt
+1.0,0.02,64.0,"Horný Hričov, okres Žilina",3 izbový byt
+390.0,11.14,35.0,"Žilina, okres Žilina",1 izbový byt
+620.0,13.19,47.0,"Žilina, okres Žilina",2 izbový byt
+500.0,10.27,48.7,"Javorová, Žilina - Solinky, okres Žilina",2 izbový byt
+670.0,12.41,54.0,"Žilina, okres Žilina",2 izbový byt
+990.0,17.68,56.0,"Komenského, Žilina - Hliny, okres Žilina",3 izbový byt
+800.0,8.89,90.0,"Žilina - Bôrik, okres Žilina",2 izbový byt
+790.0,14.36,55.0,"Žilina - Hliny, okres Žilina",2 izbový byt
+630.0,13.67,46.08,"Štúrova, Žilina, okres Žilina",2 izbový byt
+580.0,9.67,60.0,"Štúrova, Žilina, okres Žilina",1 izbový byt
+650.0,13.0,50.0,"Dadanova, Žilina - Hájik, okres Žilina",2 izbový byt
+580.0,17.14,33.83,"Nanterská, Žilina, okres Žilina",1 izbový byt
+580.0,12.61,46.0,"Korzo, Žilina - Hájik, okres Žilina",2 izbový byt
+1300.0,10.83,120.0,"J. M. Geromettu, Žilina - Staré mesto, okres Žilina",3 izbový byt
+800.0,11.43,70.0,"Žilina - Staré mesto, okres Žilina",2 izbový byt
+800.0,9.64,83.0,"Žilina - Hliny, okres Žilina",3 izbový byt
+650.0,10.48,62.0,"Suvorovova, Žilina - Hliny, okres Žilina",2 izbový byt
+620.0,11.07,56.0,"Gabajova, Žilina - Hliny, okres Žilina",2 izbový byt
+490.0,10.0,49.0,"Bytčická, Žilina - Bytčica, okres Žilina",2 izbový byt
+503.0,10.06,50.0,"Bytčická, Žilina - Bytčica, okres Žilina",2 izbový byt
+1100.0,6.36,173.0,"Bytčická, Žilina - Bytčica, okres Žilina",4 izbový byt
+900.0,6.72,134.0,"Bytčická, Žilina, okres Žilina",4 izbový byt
+790.0,9.52,83.0,"Žilina, okres Žilina",3 izbový byt
+770.0,10.69,72.0,"Žilina - Hliny, okres Žilina",2 izbový byt
+,,,"Antona Bernoláka 2137/21, Žilina - Staré mesto, okres Žilina",2 izbový b
+1200.0,11.88,101.0,"Žilina, okres Žilina",4 izbový byt
+,,250.0,"Žilina, okres Žilina",3 izbový byt
+600.0,10.17,59.0,"Žilina, okres Žilina",2 izbový byt
+1350.0,12.27,110.0,"Tajovského, Žilina, okres Žilina",3 izbový byt
+400.0,20.0,20.0,"Námestie gen. M. R. Štefánik, Žilina, okres Žilina",Garsónka
+790.0,9.4,84.0,"Hollého, Žilina - Staré mesto, okres Žilina",2 izbový byt
+930.0,13.98,66.5,"Za plavárňou, Žilina, okres Žilina",3 izbový byt
+810.0,10.66,76.0,"Žilina - Hliny, okres Žilina",3 izbový byt
+760.0,8.84,86.0,"Žilina - Bôrik, okres Žilina",2 izbový byt
+1599.0,14.81,108.0,"Žilina - Bôrik, okres Žilina",3 izbový byt
+1500.0,13.27,113.0,"Žilina - Bôrik, okres Žilina",3 izbový byt
+599.0,11.3,53.0,"Žilina - Staré mesto, okres Žilina",1 izbový byt
+1200.0,8.82,136.0,"Žilina - Staré mesto, okres Žilina",4 izbový byt
+1250.0,9.47,132.0,"Žilina, okres Žilina",3 izbový byt
+1950.0,12.04,162.0,"Žilina, okres Žilina",4 izbový byt
+850.0,8.42,101.0,"Žilina, okres Žilina",3 izbový byt
+425.0,7.2,59.0,"Antona Bernoláka, Žilina, okres Žilina",2 izbový byt
+750.0,8.72,86.0,"Farská ulička, Žilina - Staré mesto, okres Žilina",3 izbový byt
+720.0,14.69,49.0,"Legionárska, Žilina - Staré mesto, okres Žilina",2 izbový byt
+550.0,10.38,53.0,"Hájik, Žilina - Hájik, okres Žilina",2 izbový byt
+700.0,10.0,70.0,"Žilina - Staré mesto, okres Žilina",3 izbový byt
+700.0,15.56,45.0,"staré mesto, Žilina - Staré mesto, okres Žilina",2 izbový byt
+720.0,12.0,60.0,"Juraja Fándlyho, Žilina - Hliny, okres Žilina",3 izbový byt

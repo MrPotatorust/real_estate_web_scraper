@@ -11,6 +11,8 @@ import numpy as np
 import datetime
 import os
 
+import time
+
 
 
 
@@ -48,17 +50,18 @@ def get_data(buy_or_rent, type_of_property, location):
 
     #opening the dropdown menu
     driver.find_element(By.XPATH, "//input[@placeholder='Celá ponuka']").click()
+
     #selects if you want to buy or rent
-    driver.find_element(By.XPATH, f"(//div[contains(@class, 'css-1ch07sa')])[{buy_or_rent}]").click()
+    driver.find_element(By.XPATH, f"(//div[contains(@class, 'css-13womkq')])[{buy_or_rent}]").click()
 
     #searches for the desired location
     driver.find_element(By.XPATH, "//input[@placeholder='Kde hľadáte?']").send_keys(location)
 
     #selecting the first instance of the location
-    wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "div.css-apb471"))).click()
+    wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "div.css-1krtfkx"))).click()
 
     #selects which type of property you want to search for
-    driver.find_element(By.XPATH, f"(//div[contains(@class, 'css-f7ujmq')])[{type_of_property}]").click()
+    driver.find_element(By.XPATH, f"(//div[contains(@class, 'css-120h6tl')])[{type_of_property}]").click()
 
     #clicks the search button
     wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "button.css-1nte1ih"))).click()
@@ -106,7 +109,7 @@ def get_data(buy_or_rent, type_of_property, location):
                 no_price_per_meter = False
 
             else:
-                data["price"].append(float(convert_to_num(text[:index-2])))
+                data["price"].append(float(convert_to_num(text[:index-6])))
 
 
                 #checks if its a house or a apartment

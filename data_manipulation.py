@@ -35,7 +35,7 @@ def get_newer_data(folder_name):
 
     get_data(buy_or_rent, type_of_property, location)
 
-#get_newer_data("byty-zilina-predaj")
+get_newer_data("byty-zilina-prenajom")
 
 
 
