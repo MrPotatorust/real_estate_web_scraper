@@ -116,7 +116,7 @@ def get_data(buy_or_rent, type_of_property, location):
                     data["price_per_sq_m"].append(float(convert_to_num(text[index+2:-4])))
 
                 else:
-                    data["price_per_sq_m"].append(float(convert_to_num(text[index:-9])))
+                    data["price_per_sq_m"].append(float(convert_to_num(text[index:-5])))
 
         #scrapes and append rest of the data
         count = 0
