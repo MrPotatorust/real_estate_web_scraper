@@ -59,7 +59,7 @@ def get_data(buy_or_rent, type_of_property, location):
     wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "div.css-1krtfkx"))).click()
 
     #selects which type of property you want to search for
-    driver.find_element(By.XPATH, f"(//div[contains(@class, 'css-120h6tl')])[{type_of_property}]").click()
+    wait.until(EC.element_to_be_clickable((By.XPATH, '//button[.//p[text()="Hľadať"]]'))).click()
 
     #clicks the search button
     wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "button.css-1nte1ih"))).click()
