@@ -83,7 +83,7 @@ def extract_data(folder_name, function_type):
 
     return averages
 
-#extract_data("byty-okres-zilina-predaj", "")
+extract_data("byty-okres-zilina-predaj", "")
 
 
 
