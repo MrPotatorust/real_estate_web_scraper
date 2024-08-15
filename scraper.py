@@ -4,14 +4,12 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 
+
 import pandas as pd
 import numpy as np
 
-
 import datetime
 import os
-import time
-
 
 
 
@@ -53,6 +51,9 @@ def get_data(buy_or_rent, type_of_property, location):
         accept_cookies(driver, wait)
 
 
+        
+
+
 
     #GETS AND ENTERS THE LOCATION
     location_el = wait.until(EC.element_to_be_clickable((By.XPATH, '//input[@placeholder="Kde hľadáte?"]')))
@@ -61,7 +62,7 @@ def get_data(buy_or_rent, type_of_property, location):
         wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "div.mui-1krtfkx"))).click()
     except:
         location_el.click()
-        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "div.mui-1krtfkx"))).click()
+        driver.find_element(By.CSS_SELECTOR, "div.mui-1krtfkx").click()
 
     # CHOOSES IF YOU WANT TO RENT OR BUY
     wait.until(EC.element_to_be_clickable((By.XPATH, f"(//div[contains(@class, 'mui-13womkq')])[{buy_or_rent}]"))).click()
@@ -114,17 +115,16 @@ def get_data(buy_or_rent, type_of_property, location):
                 data["price_per_sq_m"].append(np.nan)
                 no_price_per_meter = False
 
-            else:
-                data["price"].append(float(convert_to_num(text[:index-6])))
-
+            elif buy_or_rent == 1:
 
 
                 #checks if its a house or a apartment
-                if buy_or_rent == 1:
-                    data["price_per_sq_m"].append(float(convert_to_num(text[index+2:-4])))
+                data["price"].append(float(convert_to_num(text[:index-1])))
+                data["price_per_sq_m"].append(float(convert_to_num(text[index+2:-4])))
 
-                else:
-                    data["price_per_sq_m"].append(float(convert_to_num(text[index+2:-10])))
+            else:
+                data["price"].append(float(convert_to_num(text[:index-6])))
+                data["price_per_sq_m"].append(float(convert_to_num(text[index+1:-9])))
 
         #scrapes and append rest of the data
         count = 0
@@ -158,12 +158,11 @@ def get_data(buy_or_rent, type_of_property, location):
         wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "div.advertisement-item--content__price")))
         
 
-
     driver.quit()
 
 
 
-    # creates a csv if it doesnt exist and puts it in the data folder
+# creates a csv if it doesnt exist and puts it in the data folder
     cur_date = datetime.datetime.now()
     file_name = url[29:-1].replace('/', '-')
     directory = 'data/'+file_name+"/"
@@ -178,6 +177,3 @@ def get_data(buy_or_rent, type_of_property, location):
     df = pd.DataFrame(data)
     df.to_csv((directory+file_name+"_"+str(cur_date.date())+".csv"), index=False)
 
-
-
-get_data(1, 2, "zilina")
